@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/linux
+END
+libjinput-linux64.so
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/linux/libjinput-linux64.so
+END
+libopenal.so
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/linux/libopenal.so
+END
+libopenal64.so
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/linux/libopenal64.so
+END
+liblwjgl.so
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/linux/liblwjgl.so
+END
+liblwjgl64.so
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/linux/liblwjgl64.so
+END
+libjinput-linux.so
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/linux/libjinput-linux.so
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data
+END
+Factory.java
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/Factory.java
+END
+Referenced.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/Referenced.java
+END
+Createable.java
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/Createable.java
+END
+DataController.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/DataController.java
+END
+Retriever.java
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/Retriever.java
+END
+ChangeListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/ChangeListener.java
+END
+Destroyable.java
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/Destroyable.java
+END

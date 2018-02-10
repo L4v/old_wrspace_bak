@@ -1,0 +1,94 @@
+package org.jrabbit.base.core.loop;
+
+import org.jrabbit.base.core.types.Renderable;
+import org.jrabbit.base.core.types.Updateable;
+
+/******************************************************************************
+ * A time-controlled loop that is intended to form the base of any singly
+ * threaded game. The general process is:
+ * 
+ * 		1: Update time step. 
+ * 		2: Update the game. 
+ * 		3: Render the game.  
+ * 		4: Sleep the loop to control frame rate and save system resources.
+ * 
+ * It also has methods to execute commands before and after the loop begins and
+ * ends.
+ * 
+ * The loop can be told to stop execution via the exit() command. Note that this
+ * doesn't shut down the loop immediately, but allows the frame to finish.
+ * 
+ * @author Chris Molini
+ *****************************************************************************/
+public abstract class Loop implements Updateable, Renderable
+{
+	/**
+	 * A boolean that controls if the loop should continue.
+	 **/
+	protected boolean exit;
+
+	/**
+	 * Controls the timing and resolution of the game loop.
+	 **/
+	protected LoopController controller;
+
+	/*************************************************************************
+	 * Creates a Loop with a default time controller.
+	 *************************************************************************/
+	public Loop()
+	{
+		controller = new LoopController();
+	}
+
+	/*************************************************************************
+	 * Calls the loop's execution cycle. Automatically calls start() and end()
+	 * before and after the actually looping process.
+	 *************************************************************************/
+	public void run()
+	{
+		start();
+		while (!exit)
+		{
+			controller.tick();
+			update(controller.delta());
+			render();
+			controller.sleep();
+		}
+		end();
+	}
+
+	/*************************************************************************
+	 * Can be overridden to make the loop call particular commands before
+	 * execution.
+	 *************************************************************************/
+	protected void start() { }
+
+	/*************************************************************************
+	 * Can be overridden to make the loop call particular commands after
+	 * execution.
+	 *************************************************************************/
+	protected void end() { }
+	
+	public void update(int delta) { }
+	
+	public void render() { }
+
+	/*************************************************************************
+	 * Flags the loop to stop after the current cycle is finished.
+	 *************************************************************************/
+	public void exit()
+	{
+		exit = true;
+	}
+
+	/*************************************************************************
+	 * Gains access to the loop's execution controller.
+	 * 
+	 * @return The object that controls both the loop's rate of execution and
+	 *         the resolution of update commands.
+	 *************************************************************************/
+	public LoopController controller()
+	{
+		return controller;
+	}
+}

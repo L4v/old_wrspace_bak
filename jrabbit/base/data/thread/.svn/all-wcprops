@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/thread
+END
+ImageLoadingThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/thread/ImageLoadingThread.java
+END
+ResourceLoadingThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/thread/ResourceLoadingThread.java
+END
+WatchableGLThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/thread/WatchableGLThread.java
+END
+SoundLoadingThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/thread/SoundLoadingThread.java
+END
+WatchableThread.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/thread/WatchableThread.java
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/standard/game/world/camera/components
+END
+CameraTransforms.java
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/standard/game/world/camera/components/CameraTransforms.java
+END
+CameraViewChecker.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/standard/game/world/camera/components/CameraViewChecker.java
+END
+SceneToCameraCoordTransform.java
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/standard/game/world/camera/components/SceneToCameraCoordTransform.java
+END
+CameraShaker.java
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/standard/game/world/camera/components/CameraShaker.java
+END

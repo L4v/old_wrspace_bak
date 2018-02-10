@@ -1,0 +1,418 @@
+package org.jrabbit.base.input;
+
+import java.awt.Point;
+import java.util.ArrayList;
+
+import org.jrabbit.base.graphics.misc.CursorLoader;
+import org.jrabbit.base.graphics.transforms.Vector2f;
+import org.jrabbit.base.managers.window.WindowManager;
+import org.jrabbit.base.math.vector.BaseVector2f;
+import org.jrabbit.base.math.vector.VectorPath;
+import org.jrabbit.base.math.vector.VectorTransform;
+import org.lwjgl.LWJGLException;
+import org.lwjgl.input.Mouse;
+
+/*****************************************************************************
+ * MouseHandler is a static class that provides the default methods for reacting
+ * to player input via the mouse. It is automatically updated in the main game
+ * loop.
+ * 
+ * MouseHandler is designed to work with a mouse that has any number of buttons;
+ * to learn the number of buttons simply use the getButtonCount() method in
+ * Mouse.
+ * 
+ * Additionally, MouseHandler handles mouse movement interpretation. In to a
+ * "motion-listener" system, where objects can be notified of mouse movements,
+ * MouseHandler also stores VectorPaths that keeps track of the motion of the
+ * mouse over time, both in world coordinates and screen coordinates. This path
+ * has a maximum length that can be set.
+ * 
+ * NOTE: It's possible that a different input setup will better suit your needs.
+ * If this is the case, you should be aware that by default, MouseHandler "eats"
+ * all Mouse events. You can turn this activity off, however, and interpret them
+ * with your own code.
+ * 
+ * @author Chris Molini
+ *****************************************************************************/
+public final class MouseHandler
+{
+	/**
+	 * Whether or not MouseHandler should parse Mouse events.
+	 **/
+	private static boolean activated = true;
+
+	/**
+	 * The number of buttons on the mouse that are valid for input.
+	 **/
+	private static int NUM_BUTTONS = Mouse.getButtonCount();
+
+	/**
+	 * The stored data about mouse clicks.
+	 **/
+	private static boolean[] inputClicked = new boolean[NUM_BUTTONS];
+
+	/**
+	 * The stored data about mouse button releases.
+	 **/
+	private static boolean[] inputReleased = new boolean[NUM_BUTTONS];
+
+	/**
+	 * The stored data about held mouse buttons.
+	 **/
+	private static boolean[] inputDown = new boolean[NUM_BUTTONS];
+
+	/**
+	 * The amount the mouse wheel hase moved since the last update cycle.
+	 **/
+	private static int mouseWheelChange = 0;
+
+	/**
+	 * The mouse motion path, in screen coordinates.
+	 **/
+	private static VectorPath screenPath = new VectorPath(10);
+
+	/**
+	 * The mouse motion path, in calculated game-world coordinates.
+	 **/
+	private static VectorPath worldPath = new VectorPath(10);
+
+	/**
+	 * The calculator that transforms screen coordinates into game-world
+	 * coordinates. The initial value, shown here, simply copies the vector. It
+	 * should be noted, however, that the default jRabbit setup redefines this
+	 * upon initialization.
+	 **/
+	private static VectorTransform positionCalculator = new VectorTransform()
+	{
+		public Vector2f transform(BaseVector2f vector)
+		{
+			return new Vector2f(vector.x(), vector.y());
+		}
+	};
+
+	/**
+	 * The listeners that will be notified of wheel and button input events.
+	 **/
+	private static ArrayList<MouseListener> listeners = new ArrayList<MouseListener>();
+
+	/**
+	 * The listeners that will be notified of movement events.
+	 **/
+	private static ArrayList<MouseMotionListener> motionListeners = new ArrayList<MouseMotionListener>();
+
+	/*************************************************************************
+	 * Determines whether or not Mouse events should be processed. Use this to
+	 * turn off MouseHandler calculations if you want to use a different input
+	 * system for handling Keyboard events.
+	 * 
+	 * @param active
+	 *            Whether or not the MouseHandler should process Mouse events.
+	 *************************************************************************/
+	public static void activate(boolean active)
+	{
+		activated = active;
+	}
+
+	/*************************************************************************
+	 * Learns if the MouseHandler is active.
+	 * 
+	 * @return True if Mouse events are being processed, false if not.
+	 *************************************************************************/
+	public static boolean activated()
+	{
+		return activated;
+	}
+
+	/*************************************************************************
+	 * Adds a listener to the MouseHandler. Whenever a Mouse button event is
+	 * processed, this listener will be notified.
+	 * 
+	 * @param listener
+	 *            The listener to add.
+	 *************************************************************************/
+	public static void addListener(MouseListener listener)
+	{
+		listeners.add(listener);
+	}
+
+	/*************************************************************************
+	 * Removes a listener from the MouseHandler. This stops that object from
+	 * receiving notifications of button changes.
+	 * 
+	 * @param listener
+	 *            The listener to remove.
+	 *************************************************************************/
+	public static void removeListener(MouseListener listener)
+	{
+		listeners.remove(listener);
+	}
+
+	/*************************************************************************
+	 * Removes all non-motion listeners from the MouseHandler.
+	 *************************************************************************/
+	public static void clearListeners()
+	{
+		listeners.clear();
+	}
+
+	/*************************************************************************
+	 * Adds a motion listener to the MouseHandler. Whenever a Mouse motion event
+	 * is processed, this listener will be notified.
+	 * 
+	 * @param listener
+	 *            The listener to add.
+	 *************************************************************************/
+	public static void addMotionListener(MouseMotionListener listener)
+	{
+		motionListeners.add(listener);
+	}
+
+	/*************************************************************************
+	 * Removes a motion listener from the MouseHandler. This stops that object
+	 * from receiving notifications of mouse movement.
+	 * 
+	 * @param listener
+	 *            The listener to remove.
+	 *************************************************************************/
+	public static void removeMotionListener(MouseMotionListener listener)
+	{
+		motionListeners.remove(listener);
+	}
+
+	/*************************************************************************
+	 * Removes all motion listeners from the MouseHandler.
+	 *************************************************************************/
+	public static void clearMotionListeners()
+	{
+		motionListeners.clear();
+	}
+
+	/*************************************************************************
+	 * Checks to see if the indicated mouse button is held down.
+	 * 
+	 * @param button
+	 *            The button number to check. Main button is 0, right is 1,
+	 *            etc. in decreasing order of prominence.
+	 * 
+	 * @return True if the button is currently pressed, false if not.
+	 *************************************************************************/
+	public static boolean isButtonDown(int button)
+	{
+		return inputDown[button];
+	}
+
+	/*************************************************************************
+	 * Checks to see if the indicated mouse button was clicked since the last
+	 * update cycle.
+	 * 
+	 * @param button
+	 *            The button number to check. Main button is 0, right is 1,
+	 *            etc. in decreasing order of prominence.
+	 * 
+	 * @return True if the button was clicked, false if not.
+	 *************************************************************************/
+	public static boolean wasButtonClicked(int button)
+	{
+		return inputClicked[button];
+	}
+
+	/*************************************************************************
+	 * Checks to see if the indicated mouse button was released since the last
+	 * update cycle.
+	 * 
+	 * @param button
+	 *            The button number to check. Main button is 0, right is 1,
+	 *            etc. in decreasing order of prominence.
+	 * 
+	 * @return True if the button was released, false if not.
+	 *************************************************************************/
+	public static boolean wasButtonReleased(int button)
+	{
+		return inputReleased[button];
+	}
+
+	/*************************************************************************
+	 * Accesses the amount the mouse wheel was rotated since the last update
+	 * cycle.
+	 * 
+	 * @return The amount the wheel changed. The magnitude may very from mouse
+	 *         to mouse.
+	 *************************************************************************/
+	public static int wheelChange()
+	{
+		return mouseWheelChange;
+	}
+
+	/*************************************************************************
+	 * Learns the current location of the mouse hotspot, in either screen or
+	 * game-world coordinates.
+	 * 
+	 * @param onscreen
+	 *            True indicates the coordinates should be for the screen,
+	 *            false indicates they should be in-game.
+	 * 
+	 * @return The location of the mouse.
+	 *************************************************************************/
+	public static Vector2f location(boolean onscreen)
+	{
+		return (onscreen ? screenPath : worldPath).end();
+	}
+
+	/*************************************************************************
+	 * Learns the stored mouse path, in either screen or game-world coordinates.
+	 * 
+	 * @param onscreen
+	 *            True indicates the coordinates should be for the screen,
+	 *            false indicates they should be in-game.
+	 * 
+	 * @return The stored path of the mouse.
+	 *************************************************************************/
+	public static VectorPath path(boolean onscreen)
+	{
+		return onscreen ? screenPath : worldPath;
+	}
+
+	/*************************************************************************
+	 * Defines the length of the stored mouse path.
+	 * 
+	 * If the indicated length is less than the current length of the path, the
+	 * path is cropped to the size desired. However, if the indicated length is
+	 * longer than the path, the path is cropped to fit.
+	 * 
+	 * @param length
+	 *            The number of locations to store as a consecutive path.
+	 *************************************************************************/
+	public static void setPathLength(int length)
+	{
+		screenPath.setMaxLength(length);
+		worldPath.setMaxLength(length);
+	}
+
+	/*************************************************************************
+	 * Accesses the VectorTransform used to calculate game-world coordinates
+	 * from screen coordinates.
+	 * 
+	 * @return The position calculator.
+	 *************************************************************************/
+	public static VectorTransform positionCalculator()
+	{
+		return positionCalculator;
+	}
+
+	/*************************************************************************
+	 * Redefines the object that calculates game-world coordinates from screen
+	 * coordinates.
+	 * 
+	 * @param calculator
+	 *            The new VectorTransform to use.
+	 *************************************************************************/
+	public static void setPositionCalculator(VectorTransform calculator)
+	{
+		positionCalculator = calculator;
+	}
+
+	/*************************************************************************
+	 * Use this to make the cursor invisible or not.
+	 * 
+	 * NOTE: The in no way affects the calculations of mouse coordinates and
+	 * events, it simply changes how the mouse is shown.
+	 * 
+	 * @param hide
+	 *            Whether or not to hide the mouse.
+	 *************************************************************************/
+	public static void hideMouse(boolean hide)
+	{
+		Mouse.setGrabbed(hide);
+	}
+
+	/*************************************************************************
+	 * Defines the cursor by the image at the indicated filepath. The hotspot is
+	 * located at the top-left of the mouse image.
+	 * 
+	 * @param filepath
+	 *            The location of the image to use.
+	 *************************************************************************/
+	public static void setCursor(String filepath)
+	{
+		try
+		{
+			Mouse.setNativeCursor(CursorLoader.load(filepath));
+		}
+		catch (LWJGLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	/*************************************************************************
+	 * Defines the cursor by the image at the indicated filepath with the
+	 * indicated hotspot.
+	 * 
+	 * @param filepath
+	 *            The location of the image to use.
+	 * @param hotspot
+	 *            The point on the image to use as the hotspot.
+	 *************************************************************************/
+	public static void setCursor(String filepath, Point hotspot)
+	{
+		try
+		{
+			Mouse.setNativeCursor(CursorLoader.load(filepath, hotspot));
+		}
+		catch (LWJGLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+	/*************************************************************************
+	 * Advances the update cycle, clears stored input data, and builds the mouse
+	 * paths.
+	 * 
+	 * If the MouseHandler is activated, it also consumes all Mouse events and
+	 * updates button info.
+	 *************************************************************************/
+	public static void update()
+	{
+		screenPath.push(WindowManager.controller().transform(
+				new Vector2f(Mouse.getX(), Mouse.getY())));
+		worldPath.push(positionCalculator.transform(screenPath.end()));
+		
+		mouseWheelChange = 0;
+		for (int i = 0; i < NUM_BUTTONS; i++)
+		{
+			inputClicked[i] = false;
+			inputReleased[i] = false;
+			inputDown[i] = Mouse.isButtonDown(i);
+		}
+
+		if (activated)
+			while (Mouse.next())
+			{
+				int ID = Mouse.getEventButton();
+				if (ID != -1)
+					if (Mouse.getEventButtonState())
+					{
+						inputClicked[ID] = true;
+						for (MouseListener mL : listeners)
+							mL.buttonClicked(ID);
+					}
+					else
+					{
+						inputReleased[ID] = true;
+						for (MouseListener mL : listeners)
+							mL.buttonReleased(ID);
+					}
+				mouseWheelChange += Mouse.getDWheel();
+				if (mouseWheelChange != 0)
+					for (MouseListener mL : listeners)
+						mL.wheelMoved(mouseWheelChange);
+
+				int dX = Mouse.getEventDX();
+				int dY = -Mouse.getEventDY();
+				if (dX != 0 || dY != 0)
+					for (MouseMotionListener mL : motionListeners)
+						mL.mouseMoved(dX, dY);
+			}
+	}
+}

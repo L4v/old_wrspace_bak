@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/standard/profiler/renderer
+END
+BRProfilerRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/standard/profiler/renderer/BRProfilerRenderer.java
+END
+ProfilerRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/standard/profiler/renderer/ProfilerRenderer.java
+END
+TRProfilerRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/standard/profiler/renderer/TRProfilerRenderer.java
+END
+BLProfilerRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/standard/profiler/renderer/BLProfilerRenderer.java
+END
+TLProfilerRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/standard/profiler/renderer/TLProfilerRenderer.java
+END

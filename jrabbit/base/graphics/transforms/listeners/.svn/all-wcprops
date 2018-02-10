@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/transforms/listeners
+END
+ScalarListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/transforms/listeners/ScalarListener.java
+END
+ColorListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/transforms/listeners/ColorListener.java
+END
+VectorListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/transforms/listeners/VectorListener.java
+END
+RotationListener.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/transforms/listeners/RotationListener.java
+END

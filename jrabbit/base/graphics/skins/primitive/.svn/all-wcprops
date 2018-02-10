@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/skins/primitive
+END
+CircleSkin.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/skins/primitive/CircleSkin.java
+END
+SquareSkin.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/skins/primitive/SquareSkin.java
+END
+PolygonSkin.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/skins/primitive/PolygonSkin.java
+END
+TriangleSkin.java
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/skins/primitive/TriangleSkin.java
+END
+PrimitiveSkin.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/skins/primitive/PrimitiveSkin.java
+END
+RegPolygonSkin.java
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/skins/primitive/RegPolygonSkin.java
+END

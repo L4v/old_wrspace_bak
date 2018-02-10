@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/windows
+END
+jinput-raw.dll
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/windows/jinput-raw.dll
+END
+jinput-raw_64.dll
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/windows/jinput-raw_64.dll
+END
+lwjgl64.dll
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/windows/lwjgl64.dll
+END
+OpenAL64.dll
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/windows/OpenAL64.dll
+END
+OpenAL32.dll
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/windows/OpenAL32.dll
+END
+lwjgl.dll
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/windows/lwjgl.dll
+END
+jinput-dx8_64.dll
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/windows/jinput-dx8_64.dll
+END
+jinput-dx8.dll
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/windows/jinput-dx8.dll
+END

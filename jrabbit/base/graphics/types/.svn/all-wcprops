@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/types
+END
+Blended.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/types/Blended.java
+END
+ScreenObject.java
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/types/ScreenObject.java
+END
+Scaled.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/types/Scaled.java
+END
+Rotated.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/types/Rotated.java
+END
+Dimensioned.java
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/types/Dimensioned.java
+END
+Colored.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/types/Colored.java
+END
+Located.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/types/Located.java
+END
+Viewer.java
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/types/Viewer.java
+END
+Visible.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/types/Visible.java
+END
+GLGroupTransformed.java
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/types/GLGroupTransformed.java
+END

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/macosx
+END
+libjinput-osx.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/macosx/libjinput-osx.jnilib
+END
+openal.dylib
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/macosx/openal.dylib
+END
+liblwjgl.jnilib
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/natives/macosx/liblwjgl.jnilib
+END

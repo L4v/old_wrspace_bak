@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/font/renderer
+END
+UnicodeRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/font/renderer/UnicodeRenderer.java
+END
+AcceleratedFontRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/font/renderer/AcceleratedFontRenderer.java
+END
+FontRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/font/renderer/FontRenderer.java
+END
+AngelCodeRenderer.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/graphics/font/renderer/AngelCodeRenderer.java
+END

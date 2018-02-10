@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib
+END
+lwjgl.jar
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/lwjgl.jar
+END
+slick-util.jar
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/slick-util.jar
+END
+slick-audio.jar
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/lib/slick-audio.jar
+END

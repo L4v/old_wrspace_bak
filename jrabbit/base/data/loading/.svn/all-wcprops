@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/loading
+END
+FileLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/loading/FileLoader.java
+END
+Loader.java
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/loading/Loader.java
+END
+SystemLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/loading/SystemLoader.java
+END
+URLLoader.java
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/p/jrabbit/code/!svn/ver/1/org/jrabbit/base/data/loading/URLLoader.java
+END
