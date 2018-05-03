@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/3DGE/3DGE.iml" filepath="$PROJECT_DIR$/3DGE/3DGE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/3DGE THE/3DGE THE.iml" filepath="$PROJECT_DIR$/3DGE THE/3DGE THE.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Bucky/Bucky.iml" filepath="$PROJECT_DIR$/Bucky/Bucky.iml" />
+      <module fileurl="file://$PROJECT_DIR$/InternetTesting/InternetTesting.iml" filepath="$PROJECT_DIR$/InternetTesting/InternetTesting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JGame/JGame.iml" filepath="$PROJECT_DIR$/JGame/JGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java3D/Java3D.iml" filepath="$PROJECT_DIR$/Java3D/Java3D.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Nature/Nature.iml" filepath="$PROJECT_DIR$/Nature/Nature.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Notepad/Notepad.iml" filepath="$PROJECT_DIR$/Notepad/Notepad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PixelGame/PixelGame.iml" filepath="$PROJECT_DIR$/PixelGame/PixelGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PixelShootingGame/PixelShootingGame.iml" filepath="$PROJECT_DIR$/PixelShootingGame/PixelShootingGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Platform/Platform.iml" filepath="$PROJECT_DIR$/Platform/Platform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Practicemakesperfect/Practicemakesperfect.iml" filepath="$PROJECT_DIR$/Practicemakesperfect/Practicemakesperfect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PrviChatProgram/PrviChatProgram.iml" filepath="$PROJECT_DIR$/PrviChatProgram/PrviChatProgram.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RPG/RPG.iml" filepath="$PROJECT_DIR$/RPG/RPG.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RPGAgain/RPGAgain.iml" filepath="$PROJECT_DIR$/RPGAgain/RPGAgain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Really/Really.iml" filepath="$PROJECT_DIR$/Really/Really.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SimpleGame/SimpleGame.iml" filepath="$PROJECT_DIR$/SimpleGame/SimpleGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Test/Test.iml" filepath="$PROJECT_DIR$/Test/Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Testing/Testing.iml" filepath="$PROJECT_DIR$/Testing/Testing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TheNewBoston/TheNewBoston.iml" filepath="$PROJECT_DIR$/TheNewBoston/TheNewBoston.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TicTacToe/TicTacToe.iml" filepath="$PROJECT_DIR$/TicTacToe/TicTacToe.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Yes/Yes.iml" filepath="$PROJECT_DIR$/Yes/Yes.iml" />
+    </modules>
+  </component>
+</project>
